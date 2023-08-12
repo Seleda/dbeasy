@@ -1,6 +1,7 @@
 {
     "name": "seleda/dbeasy",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Seleda\\Dbeasy\\": "src/"
