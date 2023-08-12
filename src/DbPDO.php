@@ -25,11 +25,11 @@
  */
 namespace Seleda\Dbeasy;
 /**
- * Class DbPDOCore.
+ * Class DbPDO.
  *
  * @since 1.5.0.1
  */
-class DbPDOCore extends Db
+class DbPDO extends Db
 {
     /** @var PDO */
     protected $link;
@@ -122,7 +122,7 @@ class DbPDOCore extends Db
     /**
      * Tries to connect to the database.
      *
-     * @see DbCore::connect()
+     * @see Db::connect()
      *
      * @return PDO
      *
@@ -144,7 +144,7 @@ class DbPDOCore extends Db
     /**
      * Destroys the database connection link.
      *
-     * @see DbCore::disconnect()
+     * @see Db::disconnect()
      */
     public function disconnect()
     {
@@ -154,7 +154,7 @@ class DbPDOCore extends Db
     /**
      * Executes an SQL statement, returning a result set as a PDOStatement object or true/false.
      *
-     * @see DbCore::_query()
+     * @see Db::_query()
      *
      * @param string $sql
      *
@@ -168,7 +168,7 @@ class DbPDOCore extends Db
     /**
      * Returns the next row from the result set.
      *
-     * @see DbCore::nextRow()
+     * @see Db::nextRow()
      *
      * @param bool $result
      *
@@ -190,7 +190,7 @@ class DbPDOCore extends Db
     /**
      * Returns all rows from the result set.
      *
-     * @see DbCore::getAll()
+     * @see Db::getAll()
      *
      * @param bool $result
      *
@@ -212,7 +212,7 @@ class DbPDOCore extends Db
     /**
      * Returns row count from the result set.
      *
-     * @see DbCore::_numRows()
+     * @see Db::_numRows()
      *
      * @param PDOStatement $result
      *
@@ -226,7 +226,7 @@ class DbPDOCore extends Db
     /**
      * Returns ID of the last inserted row.
      *
-     * @see DbCore::Insert_ID()
+     * @see Db::Insert_ID()
      *
      * @return string|int
      */
@@ -238,7 +238,7 @@ class DbPDOCore extends Db
     /**
      * Return the number of rows affected by the last SQL query.
      *
-     * @see DbCore::Affected_Rows()
+     * @see Db::Affected_Rows()
      *
      * @return int
      */
@@ -250,7 +250,7 @@ class DbPDOCore extends Db
     /**
      * Returns error message.
      *
-     * @see DbCore::getMsgError()
+     * @see Db::getMsgError()
      *
      * @param bool $query
      *
@@ -266,7 +266,7 @@ class DbPDOCore extends Db
     /**
      * Returns error code.
      *
-     * @see DbCore::getNumberError()
+     * @see Db::getNumberError()
      *
      * @return int
      */
@@ -280,7 +280,7 @@ class DbPDOCore extends Db
     /**
      * Returns database server version.
      *
-     * @see DbCore::getVersion()
+     * @see Db::getVersion()
      *
      * @return string
      */
@@ -292,7 +292,7 @@ class DbPDOCore extends Db
     /**
      * Escapes illegal characters in a string.
      *
-     * @see DbCore::_escape()
+     * @see Db::_escape()
      *
      * @param string $str
      *
@@ -309,7 +309,7 @@ class DbPDOCore extends Db
     /**
      * Switches to a different database.
      *
-     * @see DbCore::set_db()
+     * @see Db::set_db()
      *
      * @param string $db_name
      *

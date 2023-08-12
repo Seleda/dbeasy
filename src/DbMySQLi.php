@@ -25,11 +25,11 @@
  */
 namespace Seleda\Dbeasy;
 /**
- * Class DbMySQLiCore.
+ * Class DbMySQLi.
  *
  * @since 1.5.0,1
  */
-class DbMySQLiCore extends Db
+class DbMySQLi extends Db
 {
     /** @var mysqli */
     protected $link;
@@ -40,7 +40,7 @@ class DbMySQLiCore extends Db
     /**
      * Tries to connect to the database.
      *
-     * @see DbCore::connect()
+     * @see Db::connect()
      *
      * @return mysqli
      *
@@ -113,7 +113,7 @@ class DbMySQLiCore extends Db
     /**
      * Destroys the database connection link.
      *
-     * @see DbCore::disconnect()
+     * @see Db::disconnect()
      */
     public function disconnect()
     {
@@ -123,7 +123,7 @@ class DbMySQLiCore extends Db
     /**
      * Executes an SQL statement, returning a result set as a mysqli_result object or true/false.
      *
-     * @see DbCore::_query()
+     * @see Db::_query()
      *
      * @param string $sql
      *
@@ -137,7 +137,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns the next row from the result set.
      *
-     * @see DbCore::nextRow()
+     * @see Db::nextRow()
      *
      * @param bool|mysqli_result $result
      *
@@ -159,7 +159,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns all rows from the result set.
      *
-     * @see DbCore::getAll()
+     * @see Db::getAll()
      *
      * @param bool|mysqli_result $result
      *
@@ -191,7 +191,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns row count from the result set.
      *
-     * @see DbCore::_numRows()
+     * @see Db::_numRows()
      *
      * @param bool|mysqli_result $result
      *
@@ -205,7 +205,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns ID of the last inserted row.
      *
-     * @see DbCore::Insert_ID()
+     * @see Db::Insert_ID()
      *
      * @return string|int
      */
@@ -217,7 +217,7 @@ class DbMySQLiCore extends Db
     /**
      * Return the number of rows affected by the last SQL query.
      *
-     * @see DbCore::Affected_Rows()
+     * @see Db::Affected_Rows()
      *
      * @return int
      */
@@ -229,7 +229,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns error message.
      *
-     * @see DbCore::getMsgError()
+     * @see Db::getMsgError()
      *
      * @param bool $query
      *
@@ -243,7 +243,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns error code.
      *
-     * @see DbCore::getNumberError()
+     * @see Db::getNumberError()
      *
      * @return int
      */
@@ -255,7 +255,7 @@ class DbMySQLiCore extends Db
     /**
      * Returns database server version.
      *
-     * @see DbCore::getVersion()
+     * @see Db::getVersion()
      *
      * @return string
      */
@@ -267,7 +267,7 @@ class DbMySQLiCore extends Db
     /**
      * Escapes illegal characters in a string.
      *
-     * @see DbCore::_escape()
+     * @see Db::_escape()
      *
      * @param string $str
      *
@@ -281,7 +281,7 @@ class DbMySQLiCore extends Db
     /**
      * Switches to a different database.
      *
-     * @see DbCore::set_db()
+     * @see Db::set_db()
      *
      * @param string $db_name
      *

@@ -24,10 +24,13 @@
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
 namespace Seleda\Dbeasy;
+
+require_once dirname(__FILE__).'/alias.php';
+
 /**
- * Class DbCore.
+ * Class Db.
  */
-abstract class DbCore
+abstract class Db
 {
     /** @var int Constant used by insert() method */
     const INSERT = 1;

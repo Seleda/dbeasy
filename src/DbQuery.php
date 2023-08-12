@@ -29,7 +29,7 @@ namespace Seleda\Dbeasy;
  *
  * @since 1.5.0.1
  */
-class DbQueryCore
+class DbQuery
 {
     /**
      * List of data to build the query.
