@@ -319,11 +319,7 @@ abstract class Db
         $this->user = $user;
         $this->password = $password;
         $this->database = $database;
-        $this->is_cache_enabled = (defined('_PS_CACHE_ENABLED_')) ? _PS_CACHE_ENABLED_ : false;
-
-        if (!defined('_PS_DEBUG_SQL_')) {
-            define('_PS_DEBUG_SQL_', false);
-        }
+        $this->is_cache_enabled = false;
 
         if ($connect) {
             $this->connect();
@@ -582,10 +578,6 @@ abstract class Db
 
         // This method must be used only with queries which display results
         if (!preg_match('#^\s*\(?\s*(select|show|explain|describe|desc)\s#i', $sql)) {
-            if (defined('_PS_MODE_DEV_') && _PS_MODE_DEV_) {
-                throw new \Exception('Db->executeS() must be used only with select, show, explain or describe queries');
-            }
-
             return $this->execute($sql, $use_cache);
         }
 
@@ -717,10 +709,6 @@ abstract class Db
      */
     public function escape($string, $html_ok = false, $bq_sql = false)
     {
-        if (_PS_MAGIC_QUOTES_GPC_) {
-            $string = stripslashes($string);
-        }
-
         if (!is_numeric($string)) {
             $string = $this->_escape($string);
 
