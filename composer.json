@@ -1,0 +1,24 @@
+{
+    "name": "seleda/dbeasy",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Seleda\\Dbeasy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Seleda\\Dbeasy\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Seleda",
+            "email": "p.seleda@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    }
+}
