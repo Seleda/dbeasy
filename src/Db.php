@@ -237,7 +237,7 @@ abstract class Db
         }
 
         if (!isset(self::$instance[$id_server])) {
-            $class = Db::getClass();
+            $class = 'Seleda\\Dbeasy\\'.Db::getClass();
             self::$instance[$id_server] = new $class(
                 self::$_servers[$id_server]['server'],
                 self::$_servers[$id_server]['user'],
@@ -315,6 +315,9 @@ abstract class Db
      */
     public function __construct($server, $user, $password, $database, $connect = true)
     {
+        if(!defined('_DB_PREFIX_')) {
+            define('_DB_PREFIX_', '');
+        }
         $this->server = $server;
         $this->user = $user;
         $this->password = $password;
