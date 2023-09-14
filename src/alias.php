@@ -31,6 +31,9 @@
  * @param bool $htmlOK Does data contain HTML code ? (optional)
  * @return string Sanitized data
  */
+
+use Seleda\Dbeasy\Db;
+
 function pSQL($string, $htmlOK = false)
 {
     return Db::getInstance()->escape($string, $htmlOK);
