@@ -249,6 +249,14 @@ abstract class Db
         return self::$instance[$id_server];
     }
 
+    public static function removeInstance()
+    {
+        foreach (self::$instance as $key => $instance) {
+            $instance->disconnect();
+            unset(self::$instance[$key]);
+        }
+    }
+
     public function getPrefix()
     {
         return _DB_PREFIX_;
