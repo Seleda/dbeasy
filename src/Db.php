@@ -213,7 +213,7 @@ abstract class Db
      *
      * @return Db Singleton instance of Db object
      */
-    public static function getInstance($master = true)
+    public static function getInstance($master = true, $connect = true)
     {
         static $id = 0;
 
@@ -242,19 +242,12 @@ abstract class Db
                 self::$_servers[$id_server]['server'],
                 self::$_servers[$id_server]['user'],
                 self::$_servers[$id_server]['password'],
-                self::$_servers[$id_server]['database']
+                self::$_servers[$id_server]['database'],
+                $connect
             );
         }
 
         return self::$instance[$id_server];
-    }
-
-    public static function removeInstance()
-    {
-        foreach (self::$instance as $key => $instance) {
-            $instance->disconnect();
-            unset(self::$instance[$key]);
-        }
     }
 
     public function getPrefix()
