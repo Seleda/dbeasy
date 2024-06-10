@@ -151,7 +151,7 @@ class DbPDO extends Db
      */
     public function disconnect()
     {
-        unset($this->link);
+        $this->link = null;
     }
 
     /**
